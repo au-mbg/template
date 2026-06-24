@@ -9,6 +9,10 @@ version = "0.1.0"
 cmd = "quarto render"
 cwd = "course-notes"
 
+[tasks.preview]
+cmd = "quarto preview --to html"
+cwd = "course-notes"
+
 [tasks]
 
 [dependencies]
@@ -17,4 +21,5 @@ quarto = ">=1.9.38,<2"
 
 [pypi-dependencies]
 jupyter = ">=1.1.1, <2"
+course-utils = { path = "course-utils/", editable = true }
 

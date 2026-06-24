@@ -2,4 +2,46 @@
 title: Template
 ---
 
-This is just some text.
+## Using supporting Python package
+
+The supporting python package is available in the rendering environment, so it can be imported 
+like any other installed package. 
+
+```{python}
+from course_utils.example import utility_function
+
+utility_function(2)
+```
+
+In this case the function of `utility_function` is trivial but it is useful to 
+hide details that are not relevant or that risk being too complicated. 
+
+If later you want to show the details one can do 
+
+```{python}
+#| output: asis
+#| echo: false
+import inspect
+raw = inspect.getsource(utility_function)
+code = f"""```python
+{raw}
+```"""
+print(code)
+```
+
+If `#| echo: false` was to be added to this block it would just show the function definition.
+
+## Installing supporting Python package
+
+Others can install the Python package in their environment, for example for a Jupyter environment (e.g. Google Colab)
+
+```python
+repo_name = "template" # Replace with relevant repo.
+try:
+    import course_utils
+except:
+    !pip install "course-utils @ git+https://github.com/au-mbg/{repo_name}.git#subdirectory=course-utils"
+```
+
+
+
