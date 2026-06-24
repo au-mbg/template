@@ -1,0 +1,15 @@
+[workspace]
+authors = ["Mads-Peter <machri@phys.au.dk>"]
+channels = ["conda-forge"]
+name = "template"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "3.12.*"
+quarto = ">=1.9.38,<2"
+
+[pypi-dependencies]
+jupyter = ">=1.1.1, <2"
